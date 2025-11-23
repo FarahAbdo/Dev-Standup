@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dev-standup"
+version = "0.1.0"
+description = "AI-powered CLI for generating standup summaries from git logs"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+    {name = "Dev-Standup Contributors"}
+]
+dependencies = [
+    "GitPython>=3.1.40",
+    "click>=8.1.7",
+    "openai>=1.3.0",
+    "python-dotenv>=1.0.0",
+    "colorama>=0.4.6",
+    "requests>=2.31.0",
+]
+
+[project.scripts]
+dev-standup = "dev_standup.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dev_standup*"]
